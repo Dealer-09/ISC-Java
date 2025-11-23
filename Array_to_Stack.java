@@ -12,13 +12,14 @@ class Array_to_Stack
     void input_marks()
       {
           int i;
-          Scanner sc= new Scanner(System.in);
-          for(i=0;i<cap;i++)
-          {
-              System.out.println("Enter a no");
-              m[i]= sc.nextInt();
-              pushmarks(m[i]);
-            }
+          try (Scanner sc = new Scanner(System.in)) {
+			for(i=0;i<cap;i++)
+			{
+			    System.out.println("Enter a no");
+			    m[i]= sc.nextInt();
+			    pushmarks(m[i]);
+			  }
+		}
     }
     void pushmarks(int v)
     {
@@ -49,12 +50,13 @@ class Array_to_Stack
     }
     public static void main(String args[])
     {
-        Scanner sc= new Scanner(System.in);
+        try(Scanner sc= new Scanner(System.in)) {
         System.out.println("Enter number of elements");
         int n=sc.nextInt();
         Array_to_Stack obj =new  Array_to_Stack(n);
         obj. input_marks();
         obj.popmarks();
         obj.display();
+        }
     }
 }
